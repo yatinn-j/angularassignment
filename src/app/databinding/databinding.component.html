@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="username" (input)="onInputChange($event)">
+<p>{{ username }}</p>
+
+<button type="button" [disabled]="isButtonDisabled" (click)="onResetClick($event)">Reset</button>
