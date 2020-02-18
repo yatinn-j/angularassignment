@@ -1,0 +1,19 @@
+<div class="row">
+      <hr>
+      <div>
+            <button class="btn btn-success" (click)="eventStarted($event)">Start</button>&nbsp;
+            <button class="btn btn-danger" (click)="eventStopped($event)">Stop</button>
+      </div>
+      <div class="row">
+            <p>{{ status }}</p>
+      </div>
+</div>
+<hr>
+<div class="row">
+      <div class="col-md-6">
+            <app-even [evenNumberList]="evenNumberList"></app-even>
+      </div>
+      <div class="col-md-6">
+            <app-odd [oddNumberList]="oddNumberList"></app-odd>
+      </div>
+</div>

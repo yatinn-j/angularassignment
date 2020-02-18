@@ -7,6 +7,9 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { DirectivesExampleComponent } from './directives-example/directives-example.component';
+import { GameControlComponent } from './game-control/game-control.component';
+import { OddComponent } from './odd/odd.component';
+import { EvenComponent } from './even/even.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { DirectivesExampleComponent } from './directives-example/directives-exam
     WarningAlertComponent,
     SuccessAlertComponent,
     DatabindingComponent,
-    DirectivesExampleComponent
+    DirectivesExampleComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent
   ],
   imports: [
     BrowserModule,
