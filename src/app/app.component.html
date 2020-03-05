@@ -1,22 +1,9 @@
-<!-- <h3 class="appHeader">This is App Component Header</h3>
-
-<h3>Success And Warning Alert Practice Exercise</h3>
-<app-success-alert></app-success-alert>
-<app-warning-alert></app-warning-alert>
-<hr>
-
-<h3>Data-Binding Practice Exercise</h3>
-<app-databinding></app-databinding>
-<hr>
-
-<h3>Directives Practice Exercise</h3>
-<app-directives-example></app-directives-example> -->
-<app-header></app-header>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-recipes></app-recipes>
-            <app-shopping-list></app-shopping-list>
+            <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+            <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
         </div>
     </div>
 </div>
