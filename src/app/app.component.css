@@ -1,5 +1,3 @@
-.appHeader{
-    background-color:crimson;
-    text-align: center;
-    color: white;
+.container {
+  margin-top: 30px;
 }
