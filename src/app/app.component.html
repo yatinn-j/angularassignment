@@ -1,13 +1,58 @@
-<h3 class="appHeader">This is App Component Header</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onFormSubmit()" #f="ngForm">
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          email
+          required
+          ngModel
+          #email="ngModel"
+          placeholder="Enter email"
+        />
+        <span class="help-block" *ngIf="!email.valid && email.touched"
+          >Please enter valid email</span
+        >
+        <div class="form-group">
+          <select
+            id="s-list"
+            class="form-control"
+            name="subscription"
+            [ngModel]="defaultSubscription"
+          >
+            <option value="basic">Basic</option>
+            <option value="advance">Advance</option>
+            <option value="pro">Pro</option>
+          </select>
+        </div>
 
-<h3>Success And Warning Alert Practice Exercise</h3>
-<app-success-alert></app-success-alert>
-<app-warning-alert></app-warning-alert>
-<hr>
-
-<h3>Data-Binding Practice Exercise</h3>
-<app-databinding></app-databinding>
-<hr>
-
-<h3>Directives Practice Exercise</h3>
-<app-directives-example></app-directives-example>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          required
+          ngModel
+          #password="ngModel"
+          placeholder="Enter password"
+        />
+        <span class="help-block" *ngIf="password.touched && !password.valid"
+          >Please enter valid password</span
+        >
+        <button [disabled]="!f.valid" class="btn btn-primary" type="submit">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Submitted Data!</h3>
+      <p>Email: {{ result.email }}</p>
+      <p>Subscription: {{ result.subscription }}</p>
+      <p>Password: {{ result.password }}</p>
+    </div>
+  </div>
+</div>
