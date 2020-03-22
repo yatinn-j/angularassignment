@@ -1,5 +1,0 @@
-<button class="btn btn-primary" type="button" (click)="onButtonClick($event)">Display Details</button>
-<p *ngIf="isContentShown">This is toggle paragraph content</p>
-<p *ngFor="let item of clicksArray; let i = index" [ngClass]="{textColor: i >= 4}"
-    [ngStyle]="{'background-color': i >= 4 ? 'blue' : 'white'}">{{item}}
-</p>

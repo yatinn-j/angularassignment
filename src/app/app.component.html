@@ -1,13 +1,41 @@
-<h3 class="appHeader">This is App Component Header</h3>
+<div class="container">
+  <div class="row">
+    <form [formGroup]="sampleform" (ngSubmit)="onFormSubmit()">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Project Name"
+        formControlName="projectname"
+      />
 
-<h3>Success And Warning Alert Practice Exercise</h3>
-<app-success-alert></app-success-alert>
-<app-warning-alert></app-warning-alert>
-<hr>
+      <!-- <span *ngIf="sampleform.get('projectname').errors['invalidName']"
+        >This name is invalid!</span
+      > -->
 
-<h3>Data-Binding Practice Exercise</h3>
-<app-databinding></app-databinding>
-<hr>
+      <span *ngIf="sampleform.get('projectname').touched && sampleform.get('projectname').errors['required']">
+            This field is required!
+      </span>
 
-<h3>Directives Practice Exercise</h3>
-<app-directives-example></app-directives-example>
+      <input class="form-control" type="text" formControlName="projectemail" />
+      <p
+        *ngIf="
+          !sampleform.get('projectemail').valid &&
+          sampleform.get('projectemail').touched
+        "
+        class="help-block"
+      >
+        Email is not valid
+      </p>
+
+      <select class="form-control" formControlName="projectStatus">
+        <option value="stable">Stable</option>
+        <option value="critical">Critical</option>
+        <option value="finished">Finished</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
