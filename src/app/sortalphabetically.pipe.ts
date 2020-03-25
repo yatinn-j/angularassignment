@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: "sortalphabetically"
+  name: "sortalphabetically",
+  pure: false
 })
 export class SortalphabeticallyPipe implements PipeTransform {
   transform(value: any) {
