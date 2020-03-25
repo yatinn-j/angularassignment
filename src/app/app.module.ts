@@ -3,18 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { WarningAlertComponent } from './warning-alert/warning-alert.component';
-import { SuccessAlertComponent } from './success-alert/success-alert.component';
-import { DatabindingComponent } from './databinding/databinding.component';
-import { DirectivesExampleComponent } from './directives-example/directives-example.component';
+import { ReversePipe } from './reverse.pipe';
+import { SortalphabeticallyPipe } from './sortalphabetically.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WarningAlertComponent,
-    SuccessAlertComponent,
-    DatabindingComponent,
-    DirectivesExampleComponent
+    ReversePipe,
+    SortalphabeticallyPipe
   ],
   imports: [
     BrowserModule,
